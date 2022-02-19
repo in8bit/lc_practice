@@ -98,7 +98,7 @@ public class MyCircularQueue {
 
     public static void main(String[] args) {
 
-
+// copying the failing test case
         MyCircularQueue obj = new MyCircularQueue(2);
 
         boolean param_1 = obj.enQueue(1);
@@ -112,7 +112,6 @@ public class MyCircularQueue {
         boolean deQueue = obj.deQueue();
         int front = obj.Front();
 
-
         System.out.println(param_1
                 + " "+param_2
                 + " "+deQueue0
@@ -124,8 +123,6 @@ public class MyCircularQueue {
                 + " "+deQueue
                 + " "+ front);
 
-//        for (int i:obj.data) {
-//            System.out.println(i);
-//        }
+        //TODO : 56 of 58 test cases passed : work on the last two.
     }
 }
