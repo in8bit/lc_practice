@@ -17,10 +17,10 @@ public class Client {
         // post-order traversal
         List<Integer> postOrderedList = PostOrderTraversal.postorderTraversal(root);
         // in-order traversal
-        // List<Integer> inOrderedList = InOrderTraversal.inorderTraversal(root);
-        System.out.println( "List size "+ postOrderedList.size());
-        for (int i=0; i<postOrderedList.size(); i++){
-            System.out.println(postOrderedList.get(i));
+        List<Integer> inOrderedList = InOrderTraversal.inorderTraversal(root);
+
+        for (int i=0; i<inOrderedList.size(); i++){
+            System.out.println(inOrderedList.get(i));
         }
 
     }

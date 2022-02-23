@@ -45,8 +45,8 @@ public class TreeNode {
     }
 
     public void printTreeNode(TreeNode node){
-        System.out.println("val : " + node.getVal() + " " +
-                            "Left Val: "+ node.getLeft().getVal() + " " +
-                            "Right Val: "+ node.getRight().getVal());
+        System.out.println("val : " + this.val + " " +
+                            "Left Val: "+ this.left.val + " " +
+                            "Right Val: "+ this.right.val);
     }
 }
