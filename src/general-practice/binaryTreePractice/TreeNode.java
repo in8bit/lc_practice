@@ -43,4 +43,10 @@ public class TreeNode {
     public void setRight(TreeNode right) {
         this.right = right;
     }
+
+    public void printTreeNode(TreeNode node){
+        System.out.println("val : " + node.getVal() + " " +
+                            "Left Val: "+ node.getLeft().getVal() + " " +
+                            "Right Val: "+ node.getRight().getVal());
+    }
 }
