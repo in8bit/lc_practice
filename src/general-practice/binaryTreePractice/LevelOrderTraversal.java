@@ -11,40 +11,39 @@ import java.util.Queue;
 public class LevelOrderTraversal {
 
     static List<List<Integer>> finalAnswer = new ArrayList<>();
-    static List<Integer> subAns = new ArrayList<>();
 
-   static public List<List<Integer>> levelOrder(TreeNode root) {
 
-       Queue<TreeNode> queue = new LinkedList<>();
+    static public List<List<Integer>> levelOrder(TreeNode root) {
 
-       if (root != null) {
-           queue.offer(root); // offer works like add
-       }
+        Queue<TreeNode> queue = new LinkedList<>();
 
-       TreeNode cur;
+        if (root != null) {
+            queue.offer(root); // offer works like add
+        }
 
-       while (!queue.isEmpty()) {
+        TreeNode cur;
 
-           int size = queue.size();
+        while (!queue.isEmpty()) {
+            List<Integer> subAns = new ArrayList<>(); // every iteration a new list will be created and this will be the new level
+            int size = queue.size();
 
-           for (int i = 0; i < size; ++i) {        // traverse nodes in the same level
-               cur = queue.poll(); // poll removes the the value from the front of the queue
+            for (int i = 0; i < size; ++i) {        // traverse nodes in the same level
+                cur = queue.poll(); // poll removes the the value from the front of the queue
 
-               subAns.add(cur.getVal());                // visit the root
+                subAns.add(cur.getVal());                // visit the root
 
-               if (cur.getLeft() != null) {
-                   queue.offer(cur.getLeft());              // push left child to queue if it is not null
-               }
+                if (cur.getLeft() != null) {
+                    queue.offer(cur.getLeft());              // push left child to queue if it is not null
+                }
 
-               if (cur.getRight() != null) {
-                   queue.offer(cur.getRight());             // push right child to queue if it is not null
-               }
+                if (cur.getRight() != null) {
+                    queue.offer(cur.getRight());             // push right child to queue if it is not null
+                }
+            }
 
-           }
+            finalAnswer.add(subAns); // first level traversed in the for loop.. created the list... add this into the final answer  list
+        }// end while ... traverse entire queue.
 
-           finalAnswer.add(subAns);
-       }
-
-    return finalAnswer;
+        return finalAnswer;
     }
 }
