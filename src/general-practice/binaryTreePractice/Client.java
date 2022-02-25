@@ -12,6 +12,9 @@ public class Client {
                                                                 new TreeNode(1),
                                                                 new TreeNode(0))
                                     ), new TreeNode(9, null, new TreeNode(10, new TreeNode(11), null)));
+
+        TreeNode root2 = new TreeNode(1, null, new TreeNode(2));
+
         // pre-order traversal
        // List<Integer> preOrderedList = PreOrderTraversal.preorderTraversal(root);
         // post-order traversal
@@ -20,11 +23,9 @@ public class Client {
       //  List<Integer> inOrderedList = InOrderTraversal.inorderTraversal(root);
 
         // level order traversal
-        List<List<Integer>> levelOrderTraversalList = LevelOrderTraversal.levelOrder(root);
-        System.out.println(levelOrderTraversalList.size());
-        System.out.println(levelOrderTraversalList.get(0));
-        System.out.println(levelOrderTraversalList.get(1));
-        System.out.println(levelOrderTraversalList.get(2));
-        System.out.println(levelOrderTraversalList.get(3));
+      //  List<List<Integer>> levelOrderTraversalList = LevelOrderTraversal.levelOrder(root);
+        MaximumDepthOfATree maxDT = new MaximumDepthOfATree();
+        int ans = maxDT.maxDepth(root2);
+        System.out.println(ans);
     }
 }
