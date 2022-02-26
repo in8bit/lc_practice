@@ -14,6 +14,7 @@ public class Client {
                                     ), new TreeNode(9, null, new TreeNode(10, new TreeNode(11), null)));
 
         TreeNode root2 = new TreeNode(1, null, new TreeNode(2));
+
         TreeNode root3 = new TreeNode(1,
                                     new TreeNode(2,
                                             new TreeNode(3),
@@ -21,6 +22,27 @@ public class Client {
                                     new TreeNode(2,
                                             new TreeNode(4),
                                             new TreeNode(3)));
+
+        TreeNode root4 = new TreeNode(5,
+                                        new TreeNode(4,
+                                                new TreeNode(11,
+                                                        new TreeNode(7),
+                                                        new TreeNode(2)),
+                                                null),
+                                        new TreeNode(8,
+                                                new TreeNode(13),
+                                                new TreeNode(4,
+                                                        null,
+                                                        new TreeNode(1))));
+        TreeNode root5 = new TreeNode(1,
+                new TreeNode(-2,
+                        new TreeNode(1,
+                                new TreeNode(-1),
+                                null),
+                        new TreeNode(3)),
+                new TreeNode(-3,
+                        new TreeNode(-2),
+                        null));
 //
 //        // pre-order traversal
 //        List<Integer> preOrderedList = PreOrderTraversal.preorderTraversal(root);
@@ -39,5 +61,9 @@ public class Client {
 //        // isSymmetric
 //        boolean ans = treeMisc.isSymmetric(root3);
 //        System.out.println(ans);
+
+        //hasPathSum
+        boolean hasPathSum = treeMisc.hasPathSum(root4, 22);
+        System.out.println(hasPathSum);
     }
 }
