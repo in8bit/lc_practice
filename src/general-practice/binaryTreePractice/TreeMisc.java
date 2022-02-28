@@ -6,32 +6,68 @@ import java.util.ArrayList;
 public class TreeMisc {
     private int treeDepth = -1;
     private int depthCounter = 0;
+    private int uniValueCount =0;
+
+    /*
+        count uniValue subtrees:
+
+        It is a univalue subtree if it meets one of the following criteria:
+            1. The node has no children (base case)
+            2. All of the node's children are univalue subtrees, and the node and its children all have the same value
+     */
+    public int countUnivalSubtrees(TreeNode root) {
+
+        //no tree
+        if (root == null) {
+            return 0;
+        }
+        // only one node
+        if(root.getRight() == null && root.getLeft() == null){
+            uniValueCount++;
+        }
+
+        if(root.getLeft() !=null){
+            countUnivalSubtrees(root.getLeft());
+        }
+        if(root.getRight() !=null){
+            countUnivalSubtrees(root.getRight());
+        }
+
+        return uniValueCount;
+    }
+
+    private boolean isUniValue(){
+        boolean ans = false;
+        return ans;
+    }
 
 
+    /*
+        count the root values using DFS to check if the sum exists
+     */
     public boolean hasPathSum(TreeNode root, int targetSum) {
 
         if (root == null) {
             return false;
         }
-        if (root.getLeft() == null && root.getRight() == null ){
+        if (root.getLeft() == null && root.getRight() == null) {
             // leaf node
-            if(root.getVal() == targetSum){
-
-                 return true;
+            if (root.getVal() == targetSum) {
+                return true;
             }
         }
-        if (root.getLeft() != null){
-           if(hasPathSum(root.getLeft(), targetSum - root.getVal())) {
-              return true;
-           }
+        if (root.getLeft() != null) { //surrounded recursive call with if statement to return true to the calling statement
+            if (hasPathSum(root.getLeft(), targetSum - root.getVal())) {
+                return true;
+            }
         }
-        if (root.getRight() != null){
-           if(hasPathSum(root.getRight(), targetSum - root.getVal())) {
-               return true;
-           }
+        if (root.getRight() != null) {
+            if (hasPathSum(root.getRight(), targetSum - root.getVal())) {
+                return true;
+            }
         }
         return false;
-    }`
+    }
 
     /*
         if the left sub-tree is a mirror image of right sub-tree -> the binary tree is symmetric

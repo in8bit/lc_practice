@@ -43,6 +43,21 @@ public class Client {
                 new TreeNode(-3,
                         new TreeNode(-2),
                         null));
+
+        TreeNode root6 = new TreeNode(5,
+                new TreeNode(1,
+                        new TreeNode(5),
+                        new TreeNode(5)),
+                new TreeNode(5,
+                        null,
+                        new TreeNode(5)));
+        TreeNode root7 = new TreeNode(5,
+                new TreeNode(5,
+                        new TreeNode(5),
+                        new TreeNode(5)),
+                new TreeNode(5,
+                        null,
+                        new TreeNode(5)));
 //
 //        // pre-order traversal
 //        List<Integer> preOrderedList = PreOrderTraversal.preorderTraversal(root);
@@ -62,8 +77,13 @@ public class Client {
 //        boolean ans = treeMisc.isSymmetric(root3);
 //        System.out.println(ans);
 
-        //hasPathSum
-        boolean hasPathSum = treeMisc.hasPathSum(root4, 22);
-        System.out.println(hasPathSum);
+          // hasPathSum
+//        boolean hasPathSum = treeMisc.hasPathSum(root4, 22);
+//        System.out.println(hasPathSum);
+
+          //univalue subtree count
+        int ans = treeMisc.countUnivalSubtrees(root7);
+        System.out.println(ans);
+
     }
 }
