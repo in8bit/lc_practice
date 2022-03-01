@@ -1,3 +1,5 @@
+package qNStack;
+
 public class MyCircularQueue {
     int [] data;
     int head = -1;

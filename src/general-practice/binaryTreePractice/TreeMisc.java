@@ -16,31 +16,8 @@ public class TreeMisc {
             2. All of the node's children are univalue subtrees, and the node and its children all have the same value
      */
     public int countUnivalSubtrees(TreeNode root) {
-
-        //no tree
-        if (root == null) {
-            return 0;
-        }
-        // only one node
-        if(root.getRight() == null && root.getLeft() == null){
-            uniValueCount++;
-        }
-
-        if(root.getLeft() !=null){
-            countUnivalSubtrees(root.getLeft());
-        }
-        if(root.getRight() !=null){
-            countUnivalSubtrees(root.getRight());
-        }
-
         return uniValueCount;
     }
-
-    private boolean isUniValue(){
-        boolean ans = false;
-        return ans;
-    }
-
 
     /*
         count the root values using DFS to check if the sum exists

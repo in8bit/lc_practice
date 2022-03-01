@@ -1,3 +1,4 @@
+package qNStack;
 
 class MovingAverage {
     private int[] window;
