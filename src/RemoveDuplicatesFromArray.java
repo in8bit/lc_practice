@@ -23,7 +23,7 @@ public class RemoveDuplicatesFromArray {
 //        Set<Integer> set = new HashSet<Integer>(inputList);
 //        answerList.addAll(set);
 //        LinkedHashSet<Integer> set = new LinkedHashSet<>(inputList);
-//        answerList.addAll(set);
+//        answerList.addAll(set); // maintain order of insertion
         SortedSet<Integer> set = new TreeSet<>(inputList);
         answerList.addAll(set);
         
